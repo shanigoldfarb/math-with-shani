@@ -59,7 +59,6 @@ header .logo a {
 .hero {
     text-align: center;
     padding: 60px 20px 40px;
-    /* --- התיקון --- הרקע הכחלחל עם הקוביות הוחזר לכאן */
     background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(to right, #eef5ff, #f8faff);
 }
 
