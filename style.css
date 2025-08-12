@@ -1,0 +1,101 @@
+/* General Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container for centered content */
+.container {
+    max-width: 800px;
+    margin: auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 3px solid #007BFF;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Main Content Sections */
+main section {
+    background: #fff;
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Project List Specifics */
+#project-list .project {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+#project-list .project:last-child {
+    border-bottom: none;
+}
+
+#project-list h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.4rem;
+}
+
+#project-list p {
+    margin: 0;
+}
+
+/* Contact List Styles */
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact ul li {
+    padding: 5px 0;
+    font-size: 1.1rem;
+}
+
+/* General Link Styles */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #333;
+    color: #fff;
+}
