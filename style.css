@@ -3,11 +3,10 @@ body {
     font-family: 'Heebo', sans-serif;
     line-height: 1.8;
     margin: 0;
-    padding: 20px 0;
+    padding: 0; /* הסרנו את הריווח העליון, כעת ה-header צמוד לקצה */
     color: #333;
     direction: rtl;
 
-    /* שלב 1: תמונת הרקע מוגדרת על כל הגוף, היא תופיע בצדדים */
     background-image: url('math_background.jpg');
     background-attachment: fixed;
     background-size: cover;
@@ -15,15 +14,14 @@ body {
     background-repeat: no-repeat;
 }
 
-/* העטיפה שיוצרת את אפקט הקופסה */
+/* העטיפה שמתחילה *מתחת* ל-header */
 .site-wrapper {
     max-width: 1100px;
-    margin: auto;
-    /* --- התיקון המרכזי --- */
-    /* שלב 2: לעטיפה יש את צבע הרקע האפרפר שהיה קודם. זה הצבע שיופיע בין התיבות הלבנות. */
+    margin: 0 auto 20px auto; /* מרכוז, וריווח תחתון */
     background-color: #f9f9f9; 
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    border-radius: 8px;
+    /* הפינות העליונות כבר לא מעוגלות, כי הן נצמדות ל-header */
+    border-radius: 0 0 8px 8px; 
     overflow: hidden;
 }
 
@@ -34,14 +32,14 @@ body {
     padding: 0 20px;
 }
 
-/* Header and Navigation */
+/* Header and Navigation - יתפוס 100% רוחב */
 header {
-    /* נותנים לו רקע לבן משלו כדי שיסתיר את הרקע האפרפר */
-    background: #fff;
+    background: #fff; /* רקע לבן אטום שמסתיר את התמונה שמאחוריו */
     color: #333;
     padding-top: 1rem;
     padding-bottom: 0;
     border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* צל עדין מתחת ל-header */
 }
 
 header nav {
@@ -62,7 +60,7 @@ header .logo a {
 .hero {
     text-align: center;
     padding: 60px 20px 40px;
-    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(to right, #eef5ff, #f8faff);
+    /* הרקע הזה נשאר, אבל הוא כבר לא חלק מה-wrapper */
 }
 
 .hero h1 {
@@ -125,21 +123,18 @@ header .logo a {
 
 
 /* Main Content Sections */
+main {
+    padding-top: 20px; /* נותן קצת אוויר בין ה-wrapper לתוכן הראשון */
+}
+
 main section {
-    /* --- התיקון השני --- */
-    /* שלב 3: כל קופסת טקסט מקבלת רקע לבן משלה, כדי שתבלוט על הרקע האפרפר */
     background: #fff;
-    margin: 40px 0;
+    margin: 20px 0; /* הקטנו את המרווח העליון והתחתון */
     padding: 35px;
     border-radius: 8px;
-    /* מוסיפים צל עדין לכל קופסה כדי להבדיל אותה מהרקע האפרפר */
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* הסרנו את הצל הישן מ-main section אז אין צורך בזה יותר */
-main section:first-child {
-    margin-top: 40px;
-}
 
 h2 {
     color: #005A9C;
@@ -184,7 +179,6 @@ h2 {
 }
 
 .card {
-    /* לקלפים הפנימיים האלה כבר יש רקע אפרפר אז זה בסדר */
     background: #f9f9f9;
     padding: 25px;
     border-radius: 8px;
@@ -329,8 +323,8 @@ h2 {
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
-    /* רקע אטום משלו */
+    margin-top: 20px; /* הקטנו מרווח */
+    /* הרקע שלו יהיה בתוך ה-wrapper ולכן יראה אחיד */
     background: #333;
     color: #fff;
 }
