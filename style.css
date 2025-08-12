@@ -3,7 +3,7 @@ body {
     font-family: 'Heebo', sans-serif;
     line-height: 1.8;
     margin: 0;
-    padding: 0; 
+    padding: 0;
     color: #333;
     direction: rtl;
 
@@ -14,10 +14,9 @@ body {
     background-repeat: no-repeat;
 }
 
-/* --- שינוי מרכזי --- */
 /* Header and Navigation - יתפוס 100% רוחב */
 header {
-    background: #fff; /* רקע לבן אטום שמסתיר את התמונה שמאחוריו */
+    background: #fff;
     color: #333;
     padding-top: 1rem;
     padding-bottom: 0;
@@ -28,10 +27,10 @@ header {
 /* העטיפה שמתחילה *מתחת* ל-header */
 .site-wrapper {
     max-width: 1100px;
-    margin: 20px auto; /* מוסיף מרווח מעל ומתחת לקופסה */
-    background-color: #f9f9f9; 
+    margin: 20px auto;
+    background-color: #f9f9f9;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    border-radius: 8px; 
+    border-radius: 8px;
     overflow: hidden;
 }
 
@@ -60,6 +59,8 @@ header .logo a {
 .hero {
     text-align: center;
     padding: 60px 20px 40px;
+    /* --- התיקון --- הרקע הכחלחל עם הקוביות הוחזר לכאן */
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(to right, #eef5ff, #f8faff);
 }
 
 .hero h1 {
@@ -123,11 +124,11 @@ header .logo a {
 
 /* Main Content Sections */
 main {
-    padding-top: 1px; /* מונע התנהגות לא רצויה של margin */
+    padding-top: 1px;
 }
 main section {
     background: #fff;
-    margin: 20px 0; 
+    margin: 20px 0;
     padding: 35px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -320,7 +321,7 @@ h2 {
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 20px; 
+    margin-top: 20px;
     background: #333;
     color: #fff;
 }
