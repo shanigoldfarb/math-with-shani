@@ -7,24 +7,41 @@ body {
     color: #333;
     direction: rtl;
 
-    background-image: url('math_background.jpg');
+    background-image: url('./math_background.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
-/* Header and Navigation - יתפוס 100% רוחב */
-header {
+/* Top Navigation Bar - Full-width white background */
+.top-nav {
     background: #fff;
-    color: #333;
-    padding-top: 1rem;
-    padding-bottom: 0;
+    padding: 1rem 0;
     border-bottom: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* העטיפה שמתחילה *מתחת* ל-header */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #005A9C;
+    text-decoration: none;
+}
+
+/* Header - This is the Hero area with the textured background */
+header {
+    background: url('./cubes_texture.png'), linear-gradient(to right, #eef5ff, #f8faff);
+    color: #333;
+}
+
+/* The wrapper box that starts *below* the header */
 .site-wrapper {
     max-width: 1100px;
     margin: 20px auto;
@@ -41,25 +58,10 @@ header {
     padding: 0 20px;
 }
 
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 1rem;
-}
-
-header .logo a {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #005A9C;
-    text-decoration: none;
-}
-
-/* Hero Section */
+/* Hero Section content styling */
 .hero {
     text-align: center;
     padding: 60px 20px 40px;
-    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(to right, #eef5ff, #f8faff);
 }
 
 .hero h1 {
@@ -123,7 +125,7 @@ header .logo a {
 
 /* Main Content Sections */
 main {
-    padding-top: 1px;
+    padding-top: 1px; /* Prevents margin collapsing issues */
 }
 main section {
     background: #fff;
