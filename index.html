@@ -15,17 +15,21 @@
                 <div class="logo">
                     <a href="#">שני גולדפרב | מתמטיקה בקלות</a>
                 </div>
-                <ul>
-                    <li><a href="#about">אודות</a></li>
-                    <li><a href="#services">השירותים שלי</a></li>
-                    <li><a href="#why-me">למה לבחור בי?</a></li>
-                    <li><a href="#contact">יצירת קשר</a></li>
-                </ul>
+                <!-- הניווט הועבר לאזור ה-Hero למטה -->
             </nav>
             <div class="hero">
                 <h1>להפוך אתגר להצלחה במתמטיקה</h1>
                 <p>שיעורים פרטיים המותאמים אישית להצלחה שלך, מהיסודי ועד הבגרות.</p>
                 <a href="#contact" class="cta-button">לקביעת שיעור היכרות</a>
+
+                <div class="nav-buttons">
+                    <ul>
+                        <li><a href="#about">אודות</a></li>
+                        <li><a href="#services">השירותים שלי</a></li>
+                        <li><a href="#why-me">למה לבחור בי?</a></li>
+                        <li><a href="#contact">יצירת קשר</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -44,7 +48,6 @@
                 </div>
                 <div class="about-image">
                     <img src="test-image.jpg" alt="תמונה של שני גולדפרב">
-                    <!-- המלצה: החלפי בתמונה מקצועית ומחייכת שלך -->
                 </div>
             </div>
         </section>
@@ -88,16 +91,38 @@
                 <p>"הגעתי לשני עם פערים גדולים לפני הבגרות. בעזרת הליווי הצמוד שלה, הצלחתי לסגור את הפערים ולקבל ציון שמעולם לא חשבתי שאשיג."</p>
                 <cite>– יובל, תלמיד י"ב (5 יח"ל)</cite>
             </div>
-            <!-- המלצה: הוסיפי כאן המלצות אמיתיות מתלמידים קיימים או קודמים -->
         </section>
 
         <section id="contact">
             <h2>בואו נדבר!</h2>
-            <p>מוכנים לעלות על דרך המלך להצלחה? השאירו פרטים או צרו קשר ישירות ואחזור אליכם בהקדם.</p>
+            <p>מוכנים לעלות על דרך המלך להצלחה? השאירו פרטים בטופס או צרו קשר ישירות.</p>
+            
+            <!-- ====== טופס יצירת קשר חדש ====== -->
+            <div class="contact-form">
+                <!-- 
+                    חשוב מאוד: כדי שהטופס יעבוד, יש להחליף את הכתובת הבאה 
+                    בכתובת הייחודית שלך משירות Formspree.io (ראי הוראות למטה).
+                -->
+                <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">שם מלא</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">טלפון</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">הודעה</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">שליחת פנייה</button>
+                </form>
+            </div>
+
             <div class="contact-details">
-                <p><strong>טלפון:</strong> <a href="tel:052-6293185">052-6293185</a></p>
-                <p><strong>מייל:</strong> <a href="mailto:shanigoldfarb22@gmail.com">shanigoldfarb22@gmail.com</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/shanigoldfarb" target="_blank">shanigoldfarb</a></p>
+                <p><strong>אפשר גם להתקשר:</strong> <a href="tel:052-6293185">052-6293185</a></p>
+                <p><strong>או לשלוח מייל:</strong> <a href="mailto:shanigoldfarb22@gmail.com">shanigoldfarb22@gmail.com</a></p>
             </div>
         </section>
     </main>
@@ -107,9 +132,6 @@
             <p>&copy; 2025 שני גולדפרב. כל הזכויות שמורות.</p>
         </div>
     </footer>
-
-    <!-- אין צורך בקובץ JS בשלב זה, אך משאיר את הקישור למקרה שתרצי להוסיף פונקציונליות בעתיד -->
-    <!-- <script src="script.js"></script> -->
 
 </body>
 </html>
