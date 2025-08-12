@@ -4,9 +4,17 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
     color: #333;
     direction: rtl;
+
+    /* --- תוספת תמונת רקע סטטית --- */
+    background-image: url('math_background.jpg');
+    background-attachment: fixed; /* מקבע את תמונת הרקע בזמן גלילה */
+    background-size: cover; /* גורם לתמונה לכסות את כל המסך */
+    background-position: center center; /* ממקם את התמונה במרכז */
+    background-repeat: no-repeat; /* מונע מהתמונה לחזור על עצמה */
+    /* צבע רקע למקרה שהתמונה לא נטענת */
+    background-color: #f9f9f9; 
 }
 
 .container {
@@ -43,6 +51,7 @@ header .logo a {
 .hero {
     text-align: center;
     padding: 60px 20px 40px;
+    /* רקע זה יופיע מעל תמונת הרקע של ה-body */
     background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(to right, #eef5ff, #f8faff);
 }
 
@@ -107,7 +116,8 @@ header .logo a {
 
 /* Main Content Sections */
 main section {
-    background: #fff;
+    /* רקע לבן זה מבטיח שהטקסט יהיה קריא מעל תמונת הרקע הכללית */
+    background: #fff; 
     margin: 40px 0;
     padding: 35px;
     border-radius: 8px;
@@ -302,6 +312,7 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+    /* רקע אטום כדי להסתיר את תמונת הרקע שמאחוריו */
     background: #333;
     color: #fff;
 }
