@@ -23,7 +23,6 @@ header {
     padding-top: 1rem;
     padding-bottom: 0;
     border-bottom: 1px solid #ddd;
-    /* ה-Header כבר לא דביק כדי לא להסתיר את התוכן עם ה-Hero הגדול */
 }
 
 header nav {
@@ -36,7 +35,7 @@ header nav {
 header .logo a {
     font-weight: 700;
     font-size: 1.5rem;
-    color: #005A9C; /* Professional Blue */
+    color: #005A9C;
     text-decoration: none;
 }
 
@@ -50,7 +49,7 @@ header .logo a {
 .hero h1 {
     margin: 0 0 15px 0;
     font-size: 2.8rem;
-    color: #003366; /* Darker Blue */
+    color: #003366;
 }
 
 .hero p {
@@ -73,7 +72,7 @@ header .logo a {
     background: #0056b3;
 }
 
-/* New Navigation Buttons Style */
+/* Navigation Buttons Style */
 .nav-buttons {
     margin-top: 30px;
 }
@@ -209,18 +208,24 @@ h2 {
 }
 
 /* Contact Section */
-#contact p {
+#contact > p {
     text-align: center;
 }
 
+/* --- Updated Contact Details & WhatsApp Icon --- */
 .contact-details {
     text-align: center;
     font-size: 1.2rem;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .contact-details p {
-    margin: 10px 0;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .contact-details a {
@@ -233,7 +238,27 @@ h2 {
     text-decoration: underline;
 }
 
-/* New Contact Form Style */
+.whatsapp-icon-link {
+    line-height: 0; /* Removes extra space from link */
+}
+
+.whatsapp-icon-link:hover {
+    text-decoration: none; /* Icon should not be underlined */
+}
+
+.whatsapp-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-icon-link:hover .whatsapp-icon {
+    transform: scale(1.15); /* Nice hover effect */
+}
+/* --- End of Contact Details Update --- */
+
+
+/* Contact Form Style */
 .contact-form {
     max-width: 600px;
     margin: 30px auto 0;
@@ -258,7 +283,7 @@ h2 {
     border-radius: 5px;
     font-family: 'Heebo', sans-serif;
     font-size: 1rem;
-    box-sizing: border-box; /* Fixes padding issue with width */
+    box-sizing: border-box;
 }
 
 .form-group textarea {
