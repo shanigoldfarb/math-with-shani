@@ -14,6 +14,35 @@ body {
     background-repeat: no-repeat;
 }
 
+/* START: Accessibility Fixes */
+.skip-link {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    border: 2px solid #000;
+    z-index: 9999;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 10px;
+    left: 10px;
+}
+
+a:focus-visible, 
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #FFAB00;
+  outline-offset: 2px;
+  border-radius: 2px; /* Optional for better look */
+}
+/* END: Accessibility Fixes */
+
 /* --- שינוי מרכזי --- */
 /* סרגל ניווט עליון - רקע לבן ברוחב מלא */
 .top-nav {
@@ -77,7 +106,7 @@ header {
 }
 
 .cta-button {
-    background: #007BFF;
+    background: #0D47A1; /* Contrast Fix */
     color: #fff;
     padding: 12px 25px;
     font-size: 1.1rem;
@@ -88,37 +117,7 @@ header {
 }
 
 .cta-button:hover {
-    background: #0056b3;
-}/* Hero Section content styling */
-.hero {
-    text-align: center;
-    padding: 60px 20px 40px;
-}
-
-.hero h1 {
-    margin: 0 0 15px 0;
-    font-size: 2.8rem;
-    color: #003366;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-}
-
-.cta-button {
-    background: #007BFF;
-    color: #fff;
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background: #0056b3;
+    background: #002171; /* Darker hover for the new color */
 }
 
 /* Navigation Buttons Style */
@@ -220,7 +219,7 @@ h2 {
 
 .card h3 {
     margin-top: 0;
-    color: #007BFF;
+    color: #0645AD; /* Contrast Fix */
 }
 
 /* Why Me Section */
@@ -237,7 +236,7 @@ h2 {
 
 #why-me li:before {
     content: '✔';
-    color: #28a745;
+    color: #2E7D32; /* Contrast Fix (darker green) */
     margin-left: 10px;
     font-weight: bold;
 }
@@ -248,7 +247,7 @@ h2 {
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    border-right: 5px solid #007BFF;
+    border-right: 5px solid #0645AD; /* Contrast Fix */
 }
 
 #testimonials cite {
@@ -281,7 +280,7 @@ h2 {
 }
 
 .contact-details a {
-    color: #007BFF;
+    color: #0645AD; /* Contrast Fix */
     text-decoration: none;
     font-weight: bold;
 }
@@ -330,11 +329,31 @@ h2 {
     min-height: 120px;
 }
 
+.form-group-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.form-group-checkbox input[type="checkbox"] {
+    width: auto;
+    flex-shrink: 0;
+}
+.form-group-checkbox label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+.form-group-checkbox a {
+    color: #0645AD; /* Contrast Fix */
+    text-decoration: underline;
+}
+
+
 .contact-form button[type="submit"] {
     display: block;
     width: 100%;
     padding: 12px;
-    background: #28a745;
+    background: #2E7D32; /* Contrast Fix */
     color: white;
     border: none;
     border-radius: 5px;
@@ -345,8 +364,40 @@ h2 {
 }
 
 .contact-form button[type="submit"]:hover {
-    background: #218838;
+    background: #1b5e20; /* Darker hover for the new color */
 }
+
+/* START: Styles for Phone Field */
+.phone-group {
+    display: flex;
+    gap: 10px;
+    flex-direction: row-reverse;
+}
+
+.phone-group select {
+    flex-basis: 120px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1rem;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.phone-group input {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.error-message {
+    color: #d93025;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+    min-height: 1em;
+}
+/* END: Styles for Phone Field */
 
 
 /* Footer Styles */
@@ -356,4 +407,52 @@ footer {
     margin-top: 20px;
     background: #333;
     color: #fff;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Styles for legal pages content */
+.legal-page-content h2 {
+    text-align: right;
+    border-bottom: none;
+    color: #003366;
+    margin-top: 30px;
+}
+
+.legal-page-content p, .legal-page-content li {
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.legal-page-content ul {
+    padding-right: 20px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.back-link a {
+    color: #0645AD; /* Contrast Fix */
+    text-decoration: none;
+}
+.back-link a:hover {
+    text-decoration: underline;
 }
