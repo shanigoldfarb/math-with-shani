@@ -13,7 +13,9 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* START: Accessibility Fixes */
 .skip-link {
     position: absolute;
