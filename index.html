@@ -28,7 +28,7 @@
         <div class="container">
             <div class="hero">
                 <h1>להפוך אתגר להצלחה במתמטיקה</h1>
-                <p>שיעורים פרטיים המותאמים אישית להצלחה שלך, מהיסודי ועד הבגרות.</p>
+                <p>שיעורים פרטיים המותאמים אישית להצלחה שלך, מהיסודי ועד הבגרות והאקדמיה.</p>
                 <a href="#contact" class="cta-button">לקביעת שיעור היכרות</a>
 
                 <div class="nav-buttons">
@@ -36,7 +36,7 @@
                         <li><a href="#about">אודות</a></li>
                         <li><a href="#services">השירותים שלי</a></li>
                         <li><a href="#why-me">למה לבחור בי?</a></li>
-                        <li><a href="#contact">יצירת קשר</a></li>
+                        <li><a href="#latest-articles">מאמרים אחרונים</a></li>
                     </ul>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                             נעים מאוד, אני שני גולדפרב, בוגרת הנדסה בטכניון ותואר מתקדם בניהול באוניברסיטת תל-אביב. מאז ומתמיד אהבתי מספרים והיגיון, אבל יותר מזה, גיליתי שאני אוהבת לעזור לאחרים להבין אותם. אני מאמינה שכל אחד ואחת יכולים להצליח במתמטיקה עם ההכוונה הנכונה. הגישה שלי היא לא רק לפתור תרגילים, אלא לבנות בסיס חזק, להבין את ההיגיון שמאחורי הנוסחאות ולהחזיר את הביטחון העצמי מול החומר הנלמד.
                         </p>
                         <p>
-                            אני בעלת ניסיון של מעל עשור בהוראת מתמטיקה לכל הגילאים והרמות - החל מתלמידי בית ספר יסודי, דרך חטיבות הביניים ועד להכנה מלאה ומקיפה לבחינות הבגרות. המטרה שלי היא להפוך את הלמידה לחוויה חיובית, מעצימה ובעיקר – יעילה.
+                            אני בעלת ניסיון של מעל עשור בהוראת מתמטיקה לכל הגילאים והרמות - החל מתלמידי בית ספר יסודי, דרך חטיבות הביניים ועד להכנה מלאה ומקיפה לבחינות הבגרות והאקדמיה. המטרה שלי היא להפוך את הלמידה לחוויה חיובית, מעצימה ובעיקר – יעילה.
                         </p>
                     </div>
                     <div class="about-image">
@@ -77,6 +77,10 @@
                     <div class="card">
                         <h3>הכנה מלאה לבגרות</h3>
                         <p>ליווי צמוד לכל יחידות הלימוד (3, 4, ו-5 יח"ל), תרגול ממוקד, פתרון בגרויות וטכניקות להתמודדות עם לחץ בבחינה.</p>
+                    </div>
+					<div class="card">
+                        <h3>הכנה לקורסים אקדמיים</h3>
+                        <p>ליווי אישי לסטודנטים בקורסי מתמטיקה. מתאים לסטודנטים במגוון תחומים כגון הנדסה, כלכלה ומנהל עסקים.</p>
                     </div>
                 </div>
             </section>
@@ -102,7 +106,15 @@
                     <cite>– ליאם, תלמיד תיכון (4 יח"ל)</cite>
                 </div>
             </section>
-
+			<section id="latest-articles">
+				<h2>מאמרים אחרונים מהבלוג</h2>
+				<div id="latest-articles-container" class="articles-grid">
+					<!-- מאמרים אחרונים יטענו כאן -->
+				</div>
+				<div class="view-all-articles-link">
+					<a href="blog.html">לכל המאמרים...</a>
+				</div>
+			</section>
             <section id="contact">
                 <h2>בואו נדבר!</h2>
                 <p>מוכנים לעלות על דרך המלך להצלחה? השאירו פרטים בטופס או צרו קשר ישירות.</p>
@@ -192,5 +204,32 @@
     
     </div> <!-- סוף העטיפה -->
     <script src="script.js" defer></script>
+<script src="articles-db.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('latest-articles-container');
+    
+    // קח עד 5 מאמרים מהמאגר (הם כבר מסודרים מהחדש לישן)
+    const latestArticles = articlesDB.slice(0, 5);
+
+    if (latestArticles.length > 0) {
+        latestArticles.forEach(article => {
+            const articleCard = `
+                <div class="article-card">
+					<a href="articles/${article.id}.html" class="article-link">
+						<img src="${article.thumbnail}" alt="">
+						<div class="article-card-content">
+							<h3>${article.title}</h3>
+							<p>${article.summary}</p>
+							<span class="read-more">קרא/י עוד...</span>
+						</div>
+					</a>
+				</div>
+            `;
+            container.innerHTML += articleCard;
+        });
+    }
+});
+</script>
 </body>
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שני גולדפרב | מורה פרטית למתמטיקה</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/logo.png">
+</head>
+<body>
+    <a class="skip-link" href="#main">דלג לתוכן המרכזי</a>
+
+    <!-- חלק 1: סרגל ניווט עליון עם רקע לבן -->
+    <div class="top-nav">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">שני גולדפרב | מתמטיקה בקלות</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- העטיפה החדשה שיוצרת את אפקט הקופסה -->
+    <div class="site-wrapper">
+
+        <main class="container" id="main">
+        <section id="all-articles-section">
+            <h2>כל המאמרים</h2>
+            <div id="articles-list-container" class="articles-grid">
+                <!-- מאמרים יטענו כאן באמצעות JavaScript -->
+            </div>
+        </section>
+    </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 שני גולדפרב. כל הזכויות שמורות.</p>
+                <div class="footer-links">
+                    <a href="terms.html">תנאי שימוש</a> |
+                    <a href="privacy.html">מדיניות פרטיות</a> |
+                    <a href="accessibility.html">הצהרת נגישות</a>
+                </div>
+            </div>
+        </footer>
+    
+    </div> <!-- סוף העטיפה -->
+    <script src="script.js" defer></script>
+
+<!-- הוסף את השורות הבאות ממש לפני תג הסגירה </body> -->
+<script src="articles-db.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('articles-list-container');
+    
+    // ודא שהמערך קיים ולא ריק
+    if (typeof articlesDB !== 'undefined' && articlesDB.length > 0) {
+        articlesDB.forEach(article => {
+            const articleCard = `
+                <div class="article-card">
+					<a href="articles/${article.id}.html" class="article-link">
+						<img src="${article.thumbnail}" alt="">
+						<div class="article-card-content">
+							<h3>${article.title}</h3>
+							<p>${article.summary}</p>
+							<span class="read-more">קרא/י עוד...</span>
+						</div>
+					</a>
+				</div>
+            `;
+            container.innerHTML += articleCard;
+        });
+    } else {
+        container.innerHTML = '<p>לא נמצאו מאמרים.</p>';
+    }
+});
+</script>	
+
+</body>
+</html>
